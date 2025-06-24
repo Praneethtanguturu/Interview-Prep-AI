@@ -32,6 +32,7 @@ If the file is uploaded, it returns the image URL like:
   "imageUrl": "http://localhost:5000/uploads/image123.png"
 }
 */
+
 router.post("/upload-image", upload.single("image"), (req, res) => {
   if(!req.file){
     return res.status(400).json({message:"No file uploaded"});
@@ -42,3 +43,5 @@ router.post("/upload-image", upload.single("image"), (req, res) => {
 
 // This line exports the router so it can be used in your main server file:
 module.exports = router;
+
+
