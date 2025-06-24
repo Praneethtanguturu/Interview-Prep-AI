@@ -4,10 +4,12 @@ import { APP_FEATURES } from '../utils/data';
 import Modal from "../components/Modal";
 // import { UserContext } from '../context/userContext';
 import ProfileInfoCards from '../components/Cards/ProfileInfoCards';
+import Login from "./Auth/Login";
+import SignUp from "./Auth/SignUp";
 
 const LandingPage = () => {
   // const { user } = useContext(UserContext);
-  const [openAuthModal, setOpenAuthModal] = useState(false);
+  const [openAuthModal, setOpenAuthModal] = useState(true);
   const [currentPage, setCurrentPage] = useState(null);
 
   return (
@@ -105,8 +107,8 @@ const LandingPage = () => {
       }} hideHeader>
 
         <div>
-          {currentPage === "Login" && (<Login setCurrentPage={setCurrentPage} />)}
-          {currentPage === "SignUp" && (<signUp setCurrentPage={setCurrentPage} />)}
+          {currentPage === "login" && (<Login setCurrentPage={setCurrentPage} />)}
+          {currentPage === "signup" && (<SignUp setCurrentPage={setCurrentPage} />)}
         </div>
       </Modal>
     </>
